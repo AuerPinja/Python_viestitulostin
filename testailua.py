@@ -34,3 +34,5 @@ c.drawString(100, 700, message)
 c.save()
 
 print("Viesti on tallennettu!")
+
+print("Hello woldr!")
