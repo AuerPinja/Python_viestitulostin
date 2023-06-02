@@ -28,7 +28,8 @@ wraped_text = "\n".join(wrap(message, 80))
 
 pdf_file = tiedosto+".pdf"
 c = canvas.Canvas(pdf_file, pagesize=letter)
-c.setFont("Helvetica", 12)
+c.setFillColorRGB(1,0,0)
+c.setFont("Helvetica", 20)
 c.drawString(100, 700, message)
 c.save()
 
