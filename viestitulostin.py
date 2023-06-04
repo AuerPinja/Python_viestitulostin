@@ -19,26 +19,20 @@ while True:
     else:
         print("Valitsemaasi fonttia ei ole saatavilla.")
 
-'''
-color = input("Anna tekstin väri (sininen, punainen tai vihreä): ")
+while True:
+    color = input("Anna tekstin väri (sininen, punainen tai vihreä): ")
+    if color == "sininen":
+        pdf.set_text_color(0,0,255)
+        break
+    elif color == "punainen":
+        pdf.set_text_color(255,0,0)
+        break
+    elif color == "vihreä":
+        pdf.set_text_color(0,255,0)
+        break
+    else:
+        print("Valitsemaasi väriä ei ole saatavilla")
 
-
-if color == "sininen":
-    color = 0,0,255
-elif color == "punainen":
-    color = 255,0,0
-elif color == "vihreä":
-    color = 0,255,0
-else: 
-    print("Väriä ei ole saatavilla! Saatavilla olevat värit ovat sininen, punainen tai vihreä.")
-'''
-
-
-
-color = 255, 0, 0
-
-#pdf.set_font('Courier', size=30)
-pdf.set_text_color(color)
 
 pdf.cell(txt=viesti)
 pdf.cell(txt=" ")
