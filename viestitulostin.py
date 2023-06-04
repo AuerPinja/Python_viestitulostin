@@ -34,9 +34,8 @@ while True:
         print("Valitsemaasi väriä ei ole saatavilla")
 
 
-pdf.cell(w = 0, txt=viesti)
-pdf.cell(w = 0, txt=" ")
-pdf.cell(w = 0, txt="Terveisin: " + lahettaja)
+pdf.cell(w = 0, align = 'l', txt=viesti)
+pdf.cell(w = 0, align ='l', txt="Terveisin: " + lahettaja)
 
 tiedosto = input("Anna viestillesi tiedostonimi: ")  
 pdf.output(tiedosto+".pdf")
