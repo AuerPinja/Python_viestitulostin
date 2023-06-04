@@ -1,12 +1,23 @@
 from fpdf import FPDF
 
 
-pdf = FPDF()  
+pdf = FPDF()
 
 pdf.add_page()
 
 viesti = input("Kirjoita viesti: ")
 lahettaja = input("Kirjoita lähettäjän nimi: ")
+
+while True:
+    fontti = input("Mikä fontti (Courier tai Arial)? ")
+    if fontti == "Courier":
+        pdf.set_font("Courier", size = 30)
+        break
+    elif fontti == "Arial":
+        pdf.set_font("Arial", size = 30)
+        break
+    else:
+        print("Valitsemaasi fonttia ei ole saatavilla.")
 
 '''
 color = input("Anna tekstin väri (sininen, punainen tai vihreä): ")
@@ -26,7 +37,7 @@ else:
 
 color = 255, 0, 0
 
-pdf.set_font('Courier', size=30)
+#pdf.set_font('Courier', size=30)
 pdf.set_text_color(color)
 
 pdf.cell(txt=viesti)
