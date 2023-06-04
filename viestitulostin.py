@@ -8,10 +8,10 @@ pdf.add_page()
 pdf.set_font('Courier', size=30)
 
 viesti = input("Kirjoita viesti: ")
-lahettaja = input("Kirjoita lähettäjän nimi")
+lahettaja = input("Kirjoita lähettäjän nimi: ")
 
-pdf.cell(ln = 1, txt=viesti, align = 'c')
-pdf.cell(txt=lahettaja)
+pdf.cell(txt=viesti, align = 'c')
+pdf.cell(txt="Terveisin: " + lahettaja)
 
 tiedosto = input("Anna viestillesi tiedostonimi: ")  
 pdf.output(tiedosto+".pdf")
