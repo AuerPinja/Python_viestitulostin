@@ -12,25 +12,28 @@ lahettaja = input("Kirjoita lähettäjän nimi: ")
 
 while True:
     fontti = input("Mikä fontti (Courier tai Arial)? ")
-    if fontti == "Courier":
+    if fontti == "Courier" or fontti == "courier":
         pdf.set_font("Courier", size = 16)
         break
-    elif fontti == "Arial":
+    elif fontti == "Arial" or fontti == "arial":
         pdf.set_font("Arial", size = 16)
         break
     else:
         print("Valitsemaasi fonttia ei ole saatavilla.")
 
 while True:
-    color = input("Anna tekstin väri (sininen, punainen tai vihreä): ")
-    if color == "sininen":
+    color = input("Anna tekstin väri (blue, red, green tai black): ")
+    if color == "blue":
         pdf.set_text_color(0,0,255)
         break
-    elif color == "punainen":
+    elif color == "red":
         pdf.set_text_color(255,0,0)
         break
-    elif color == "vihreä":
+    elif color == "green":
         pdf.set_text_color(0,255,0)
+        break
+    elif color == "black":
+        pdf.set_text_color(0,0,0)
         break
     else:
         print("Valitsemaasi väriä ei ole saatavilla")
@@ -39,7 +42,8 @@ while True:
 pdf.cell(0, 10, txt = otsikko, align = 'C', ln = 2)
 pdf.cell(40, 10, '', ln = 2)
 pdf.multi_cell(w = 0, h = 10, txt = viesti, align = 'L')
-pdf.cell(0, 10, txt = "Terveisin: " + lahettaja, align = 'L')
+pdf.cell(40, 10, '', ln = 2)
+pdf.cell(0, 10, txt = "Terveisin: " + lahettaja, align = 'R')
 #Nämä rivit luovat solut, joihin teksti syötetään. Rivillä 40 luotu solu jää tyhjäksi, koska se vain luo tasaisen välin otsikon
 #ja varsinaisen viestin välille. Varsinaisen viestin solu(t) luodaan funktiolla multi_cell, eikä cell. Tällä tavalla ohjelma luo 
 #allekkaisia soluja tarpeen mukaan, jos kaikki teksti ei mahdukaan yhteen soluun.
