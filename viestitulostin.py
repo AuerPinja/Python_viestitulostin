@@ -39,7 +39,7 @@ while True:
 pdf.cell(0, 10, txt = otsikko, align = 'C', ln = 2)
 pdf.cell(40, 10, '', ln = 2)
 pdf.multi_cell(w = 0, h = 10, txt = viesti, align = 'L')
-pdf.cell(0, 10, txt = "Terveisin: " + lahettaja)
+pdf.cell(0, 10, txt = "Terveisin: " + lahettaja, align = 'L')
 #Nämä rivit luovat solut, joihin teksti syötetään. Rivillä 40 luotu solu jää tyhjäksi, koska se vain luo tasaisen välin otsikon
 #ja varsinaisen viestin välille. Varsinaisen viestin solu(t) luodaan funktiolla multi_cell, eikä cell. Tällä tavalla ohjelma luo 
 #allekkaisia soluja tarpeen mukaan, jos kaikki teksti ei mahdukaan yhteen soluun.
